@@ -1,0 +1,21 @@
+/*
+FUNCTIONS CAN BE FIND IN App.css
+*/
+
+.icon {
+    top: 10%;    /* top = (100% - height) / 2 */
+    height: 80%;
+    width: 50px;
+    position: relative;
+    float: left;
+    color: rgb(218, 218, 218);
+    transition: height 0.1s ease;
+}
+
+#exit {
+    float: right;
+}
+
+#hide {
+    float: right;
+}

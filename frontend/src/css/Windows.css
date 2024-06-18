@@ -1,0 +1,588 @@
+.window {
+    height: 100%;
+    width: 100%;
+    color: rgb(218, 218, 218);
+    position: relative;
+    float: left;
+}
+
+/*
+profile
+*/
+
+/* Profile Window Styles */
+#profilewindow {
+    position: absolute; /* Absolute positioning */
+    top: 1000%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset to center */
+    width: 40%; /* Fixed width */
+    padding: 40px; /* Padding for content */
+    border: 2px solid #8d8d8d; /* Dark border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #4d4d4d; /* Dark background */
+    color: #dadada; /* Light text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    height: 540px;
+}
+
+/* Sub-window Flexbox Alignment */
+#sub-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Profile Name and Description Containers */
+#profilefullname {
+    width: 100%;
+    margin-bottom: 20px; /* Space below the full name section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profilename, #profilesurname {
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #8d8d8d;
+    border-radius: 5px;
+    background-color: #333;
+    width: 80%;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#profiledescriptionContainer {
+    width: 80%;
+    margin-top: 20px; /* Space above the description */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profiledescription {
+    width: 100%;
+    height: 100px; /* Fixed height for description */
+    background-color: #4d4d4d;
+    border: 2px solid #8d8d8d;
+    border-radius: 5px;
+    color: #dadada;
+    padding: 10px;
+    margin-top: 10px;
+    resize: none;
+    text-align: center; /* Center text inside the textarea */
+}
+
+/* Action Button Styling */
+#enterbutton {
+    margin-top: 30px; /* Space above the button */
+    padding: 15px 60px; /* Increased padding for button */
+    font-size: 1.2em; /* Font size of button text */
+    cursor: pointer;
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    width: 35%;
+}
+
+/* Styles for ChangeUserName component fields */
+.change-user-name {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 80%; /* Match the width of profile fields */
+}
+
+#nameChange {
+    flex-grow: 1;
+    height: 35px; /* Adjust height */
+    background-color: #4d4d4d; /* Dark background */
+    border: 2px solid #8d8d8d; /* Dark border */
+    border-radius: 5px; /* Rounded corners */
+    color: #dadada; /* Light text color */
+    padding-left: 10px; /* Padding inside */
+    margin-right: 10px; /* Space between textarea and check icon */
+    resize: none; /* Disable resizing */
+}
+
+#fieldAccept {
+    font-size: 24px; /* Icon size */
+    color: #4caf50; /* Green color for the check icon */
+    cursor: pointer;
+}
+
+
+
+/*
+students
+*/
+
+#usertaskswindow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-user, .task-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-user input, .task-input input {
+    height: 30px;
+    width: 200px;
+    margin-right: 10px;
+    border: 2px solid #8d8d8d;
+    border-radius: 5px;
+    background-color: #4d4d4d;
+    color: #dadada;
+    padding-left: 10px;
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px; /* Ensure all icons are 30px high */
+    width: 30px;  /* Ensure all icons are 30px wide */
+    cursor: pointer;
+    transition: transform 0.1s ease, color 0.1s ease;
+    color: #dadada; /* Default color */
+}
+
+.add-icon {
+    color: #4caf50; /* Green color for add icon */
+}
+
+.delete-task-icon {
+    color: #d9534f; /* Red color for delete icon */
+    margin-left: 10px;
+}
+
+.delete-user-icon {
+    color: #d9534f; /* Red color for delete icon */
+    margin-top: 10px;
+}
+
+.user-list {
+    width: 80%;
+}
+
+.user {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #8d8d8d;
+    border-radius: 5px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user h2 {
+    margin: 0;
+    margin-bottom: 10px;
+    color: #dadada;
+    font-size: 1.5em;
+}
+
+.user textarea {
+    height: 50px; /* Reduced height */
+    width: 80%;
+    resize: none;
+    background-color: #4d4d4d;
+    border: 3px solid #8d8d8d;
+    color: rgb(218, 218, 218);
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    width: 100%; /* Ensures the ul takes full width */
+    color: #dadada;
+}
+
+.user ul li.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%; /* Full width for task item */
+}
+
+.user .task-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/*
+earnings
+*/
+
+/* Добавление стилей для окна заработка */
+#earningswindow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-container {
+    margin: 40px;
+    width: 80%;
+    height: 400px; /* Установите высоту для графиков */
+    margin-top: 20px;
+}
+
+#earningswindow h2 {
+    color: #dadada;
+    margin-bottom: 20px;
+}
+
+#earningswindow h3 {
+    color: #dadada;
+    margin-bottom: 10px;
+}
+
+/*
+calendar
+*/
+
+/* Calendar window styles */
+#calendarwindow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+h2 {
+    color: #dadada;
+    margin-bottom: 20px;
+}
+
+.lesson-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.lesson-form input, .lesson-form select {
+    height: 30px;
+    width: 40%;
+    margin: 5px;
+    border: 2px solid #8d8d8d;
+    border-radius: 5px;
+    background-color: #4d4d4d;
+    color: #dadada;
+    padding-left: 10px;
+}
+
+.lesson-form button {
+    height: 35px;
+    width: 35px;
+    background-color: #73737300;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lessons-list {
+    width: 80%;
+}
+
+.lesson-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #8d8d8d;
+    border-radius: 5px;
+    background-color: #333;
+    color: #dadada;
+    width: 100%;
+}
+
+.lesson-entry p, .lesson-entry input {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.lesson-entry input, .lesson-entry select {
+    height: 30px;
+    border: 2px solid #8d8d8d;
+    border-radius: 5px;
+    background-color: #4d4d4d;
+    color: #dadada;
+    padding-left: 10px;
+}
+
+.lesson-entry button {
+    margin-top: 10px;
+    height: 35px;
+    width: 100px;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-list {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4d4d4d;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.file-item a {
+    color: #4caf50;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.icon-button {
+    height: 25px; /* Icon button height */
+    width: 25px; /* Icon button width */
+    cursor: pointer;
+    color: #dadada;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-icon {
+    color: #4caf50; /* Green color for add icon */
+}
+
+.delete-icon {
+    margin-top: 10px;
+    color: #d9534f; /* Red color for delete icon */
+}
+
+input {
+    text-align: center;
+}
+
+/*
+training
+*/
+
+/* General styling for the main container */
+.training-requests {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #4d4d4d;
+    border: 2px solid #8d8d8d;
+    border-radius: 10px;
+    color: #dadada;
+}
+
+/* Main title styling */
+.main-title {
+    text-align: center;
+    color: #dadada;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* List and list items styling */
+.training-requests ul {
+    list-style: none;
+    padding: 0;
+}
+
+.training-requests li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 2px solid #8d8d8d;
+    border-radius: 10px;
+    background-color: #333;
+}
+
+/* Request info styling */
+.request-info {
+    margin-bottom: 10px;
+}
+
+.request-info p {
+    margin: 5px 0;
+}
+
+/* Action buttons container */
+.request-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Button styling */
+.accept-button, .reject-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.accept-button {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.reject-button {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+/* Status messages */
+.status {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #fff;
+}
+
+.status.accepted {
+    background-color: #4caf50;
+}
+
+.status.rejected {
+    background-color: #d9534f;
+}
+
+/* Styling for different states */
+.request.pending {
+    border-color: #8d8d8d;
+}
+
+.request.accepted {
+    border-color: #4caf50;
+}
+
+.request.rejected {
+    border-color: #d9534f;
+}
+
+/*
+teacher
+*/
+/* Main container for the teacher profile */
+.teacher-profile {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #4d4d4d;
+    border: 2px solid #8d8d8d;
+    border-radius: 10px;
+    color: #dadada;
+}
+
+/* Title styling */
+h1 {
+    text-align: center;
+    color: #dadada;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+/* Styling for teacher's information */
+.teacher-info {
+    margin-bottom: 20px;
+}
+
+.teacher-info p {
+    margin: 5px 0;
+    line-height: 1.5em;
+}
+
+/* Styling for PDF files section */
+.pdf-files p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.pdf-files ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pdf-files li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #333;
+    border: 2px solid #8d8d8d;
+    border-radius: 5px;
+}
+
+.pdf-files a {
+    color: #4caf50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.file-date {
+    color: #a9a9a9;
+    font-size: 0.9em;
+}
+
+/* Styling for the remove button */
+.remove-button {
+    display: block;
+    width: 60%;
+    margin: 20px auto;
+    padding: 10px 0;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Centered text for the removed teacher message */
+p {
+    text-align: center;
+    color: #dadada;
+    font-size: 1.2em;
+}

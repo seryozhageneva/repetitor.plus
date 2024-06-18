@@ -1,0 +1,93 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16.3-alpine3.20
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - auth-network
+    logging:
+      driver: none
+    ports:
+      - 30432:5432
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+    networks:
+      - auth-network
+# http://localhost:8025/ - mailhog (email debug)
+
+
+  auth-backend:
+    build: ./auth-backend
+    environment:
+      DATABASE_URL: postgresql://user:password@db:5432/db
+      SECRET_KEY: "secret"
+      MAIL_PORT: 1025
+      MAIL_SERVER: mailhog
+      EXTERNAL_HOST: 192.168.0.104
+    ports:
+      - "30100:5000"
+    depends_on:
+      - db
+      - mailhog
+    networks:
+      - auth-network
+#    logging:
+#      driver: none
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "33000:3000"
+    depends_on:
+      - auth-backend
+    networks:
+      - frontend-network
+    # volumes:
+      # - ./auth/frontend/:/usr/src/app/
+      # - /usr/src/app/node_modules
+
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx
+    depends_on:
+      - frontend
+      - auth-backend
+      - mailhog
+    networks:
+      - frontend-network
+      - auth-network
+      - tutor-network
+#    logging:
+#      driver: none
+
+
+
+
+
+volumes:
+  postgres_data:
+
+networks:
+  frontend-network:
+    driver: bridge
+  auth-network:
+    driver: bridge
+  tutor-network:
+    driver: bridge
+#  docker-compose up --build

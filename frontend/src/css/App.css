@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@533&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Jost", sans-serif;
+    user-select: none;
+}
+
+/*
+index.js App.css
+*/
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: #373737;
+}
+
+#MainWindow {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+
+#StartingText {
+    float: none;
+    text-align: center;
+    color: rgb(218, 218, 218);
+}
+
+/*
+MenuIcons.css
+*/
+
+.icon:hover{
+    opacity: 0.6;
+    cursor:pointer;
+    height: 85%;
+}
+
+.icon:active{
+    opacity: 0.3;
+    height: 80%
+}
+
+
+
+#profile:hover{
+    color: rgba(255, 189, 83);
+}
+
+#calendar:hover{
+    color: rgb(166, 107, 255);
+}
+
+#earnings:hover{
+    color: rgb(80, 255, 100);
+}
+
+#students:hover{
+    color: rgb(66, 154, 255);
+}
+
+#exit:hover{
+    color: rgba(255, 66, 66);
+}
+
+
+
+#profile:active{
+    color: rgba(255, 189, 83);
+}
+
+#calendar:active{
+    color: rgb(166, 107, 255);
+}
+
+#earnings:active{
+    color: rgb(80, 255, 100);
+}
+
+#students:active{
+    color: rgb(66, 154, 255);
+}
+
+#exit:active{
+    color: rgba(255, 66, 66);
+}
+
+#mail {
+    float: right;
+}
+
+
+/* Mail.css */
+
+/* Основной контейнер для Mail */
+.mail-container {
+    position: relative;
+  }
+  
+  /* Иконка почты */
+  #mail {
+    cursor: pointer;
+    color: #dadada;
+    transition: all 0.1s ease;
+    height: 80%;
+    width: 35px;
+    float: right;
+    right: 8px;
+  }
+  
+  #mail:hover {
+    width: 37px;
+    height: 85%;
+    right: 7px;
+  }
+
+  #text-email {
+    margin-left: -10px;
+  }
+
+  /* Оверлей модального окна */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* Содержимое модального окна */
+  .modal-content {
+    background: #4d4d4d;
+    border: 2px solid #8d8d8d;
+    border-radius: 10px;
+    color: #dadada;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Поле ввода email */
+  .email-input {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    border: 2px solid #8d8d8d;
+    border-radius: 5px;
+    background-color: #333;
+    color: #dadada;
+    text-align: center;
+  }
+  
+  /* Кнопки */
+  .submit-button,
+  .close-button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .close-button {
+    background-color: #d9534f;
+    color: white;
+  }
+  
+  .close-button:hover {
+    background-color: #c9302c;
+  }
+  
+
+/*
+Header.css
+*/
+
+/*
+Windows.css
+*/
+
+#profileframe:hover {
+    opacity: 0.4;
+    border: 8px solid #8d8d8d;
+    background-color: #1d1d1d;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#profileframe:active{
+    opacity: 0.3;
+}
+
+
+#profilesurname:hover {
+    width: 100%;
+    cursor: pointer;
+    opacity: 0.5;
+    background-color: #373737;
+}
+
+#profilename:hover {
+    width: 100%;
+    cursor: pointer;
+    opacity: 0.5;
+    background-color: #373737;
+}
+
+#profilename:active {
+    opacity: 0.3;
+}
+
+#profilesurname:active {
+    opacity: 0.3;
+}
+
+#nameAccept:hover {
+    opacity: 0.7;
+    height: 23px;
+    width: 23px;
+    top: -2px;
+    cursor: pointer;
+}
+
+#nameAccept:active {
+    opacity: 0.5;
+    height: 20px;
+    width: 20px;
+    top: -3px;
+    cursor: pointer;
+}
+
+
+
+#enterbutton:hover {
+    width: 45%;
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/*
+students
+*/
+
+.studentAddIcon:hover {
+    margin-top: 0px;
+    height: 30px;
+    width: 30px;
+}
+
+.studentAddIcon:active {
+    opacity: 0.5;
+}
+
+.icon-button:hover {
+    transform: scale(1.2);
+    color: #a1a1a1;
+}
+
+.add-icon:hover {
+    color: #81c784; /* Lighter green on hover */
+}
+
+.delete-task-icon:hover {
+    color: #ff5e5e; /* Lighter red on hover */
+}
+
+.delete-user-icon:hover {
+    color: #ff5e5e; /* Lighter red on hover */
+}
+
+/*
+calendar
+*/
+
+.session-item button:hover {
+    background-color: #757575;
+}
+
+
+/*
+trainings
+*/
+.pdf-files a:hover {
+    text-decoration: underline;
+}
+
+.remove-button:hover {
+    background-color: #ff0000;
+}
+
+.accept-button:hover {
+    background-color: #45a049;
+}
+
+.reject-button:hover {
+    background-color: #c9302c;
+}
+
+/*
+teachers
+*/
+
+.pdf-files a:hover {
+    color: #3e8e41;
+}
+
+.remove-button:hover {
+    background-color: #c9302c;
+}
